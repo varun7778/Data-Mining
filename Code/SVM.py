@@ -42,7 +42,7 @@ def smoSimple(dataIn, classLabels, C, tolerance, maxIter):
                 # If the two correspond, then there is nothing
                 # we can really do
                 if L == H:
-                    print "L is H"
+                    print ("L is H")
                     continue
 
                 # Calculate ETA
@@ -50,7 +50,7 @@ def smoSimple(dataIn, classLabels, C, tolerance, maxIter):
                         dataMatrix[i, :] * dataMatrix[i, :].T - \
                         dataMatrix[j, :] * dataMatrix[j, :].T
                 if eta >= 0:
-                    print "eta is bigger than 0"
+                    print ("eta is bigger than 0")
                     continue
 
                 # Update J and I alphas
@@ -58,7 +58,7 @@ def smoSimple(dataIn, classLabels, C, tolerance, maxIter):
                 alphas[j] = clipAlpha(alphas[j], H, L)
                 # If alpha is not moving enough, continue..
                 if abs(alphas[j] - alpha_old_j) < 0.00001:
-                    print "Alpha not moving too much.."
+                    print ("Alpha not moving too much..")
                     continue
                 # Change alpha I for the exact value, in the opposite
                 # direction
@@ -86,18 +86,18 @@ def smoSimple(dataIn, classLabels, C, tolerance, maxIter):
 
                 # Increment counter and log
                 alphaPairsChanged += 1
-                print "iter: %d i:%d, pairs changed %d" % (
+                print ("iter: %d i:%d, pairs changed %d" % (
                     iter, i, alphaPairsChanged
-                )
+                ))
 
             if alphaPairsChanged == 0:
                 iter += 1
             else:
                 iter = 0
-            print "Iteration number: %s" % iter
+            print ("Iteration number: %s" % iter)
 
-        print alphas[alphas>0]
-        print bias
+        print (alphas[alphas>0])
+        print (bias)
 
 
 def predict(train_data,test_data):

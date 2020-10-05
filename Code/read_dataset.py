@@ -86,11 +86,11 @@ ma1 = ev.MAE(predicted_results,expected_results)
 ma2 = ev.MAE(predicted_results2,expected_results)
 ma3 = ev.MAE(predicted_results3,expected_results)
 print("Decision Tree")
-print ma1
+print (ma1)
 print("\nK nearest Neighbours")
-print ma2
+print (ma2)
 print("\nSVM")
-print ma3
+print (ma3)
 
 
 print("\n----Precision and Recall----\n")
@@ -107,11 +107,11 @@ acc1= ev.accuracy(predicted_results,expected_results)
 acc2= ev.accuracy(predicted_results2,expected_results)
 acc3= ev.accuracy(predicted_results3,expected_results)
 print("Decision Tree")
-print acc1
+print (acc1)
 print("\nK nearest Neighbours")
-print acc2
+print (acc2)
 print("\nSVM")
-print acc3
+print (acc3)
 
 fig ,axes = plt.subplots(2,2)
 

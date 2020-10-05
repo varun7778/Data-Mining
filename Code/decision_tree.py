@@ -94,16 +94,16 @@ def buildtree(rows, scorefun=entropy):
 def printtree(tree,indent=''):
     # Is this a leaf node?
     if tree.results!=None:
-        print str(tree.results)
+        print (str(tree.results))
     else:
         # Print the criteria
-        print 'Column ' + str(tree.col)+' : '+str(tree.value)+'? '
+        print ('Column ' + str(tree.col)+' : '+str(tree.value)+'? ')
 
         # Print the branches
-        print indent+'True->',
-        printtree(tree.tb,indent+'  ')
-        print indent+'False->',
-        printtree(tree.fb,indent+'  ')
+        print (indent+'True->',
+        printtree(tree.tb,indent+'  '))
+        print (indent+'False->',
+        printtree(tree.fb,indent+'  '))
 
 # my_data=[['slashdot','USA','yes',18,'None'],
 #         ['google','France','yes',23,'Premium'],
@@ -126,7 +126,7 @@ def printtree(tree,indent=''):
 
 def getvalue(d,tree):
     if(tree.results!=None):
-        return tree.results.keys()[0]
+        return list(tree.results.keys())[0]
     value = tree.value
     split_function=None
     # for numerical values

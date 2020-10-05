@@ -52,7 +52,7 @@ def getResponse(neighbors):
 			classVotes[response] += 1
 		else:
 			classVotes[response] = 1
-	sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
+	sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
 	return sortedVotes[0][0]
 
 def getAccuracy(testSet, predictions):
@@ -69,8 +69,8 @@ def predict(trainingSet,testSet):
 	# split = 0.67
 	# loadDataset('iris.data', split, trainingSet, testSet)
 	# loadDataset('../Data/breast-cancer-wisconsin-data.csv', split, trainingSet, testSet)
-	print 'Train set: ' + repr(len(trainingSet))
-	print 'Test set: ' + repr(len(testSet))
+	print ('Train set: ' + repr(len(trainingSet)))
+	print ('Test set: ' + repr(len(testSet)))
 	# print trainingSet,testSet
 	# generate predictions
 	predictions=[]
